@@ -2,9 +2,21 @@
 
 A tiny, zero-Gradle, zero-permission Android `WallpaperService` that turns layered AI art (background plate + foreground cutout + optional depth relief map) into smooth, tilt-reactive 3D parallax live wallpapers — without the edge stretching, halos, or disocclusion tears you get from single-image depth-map warps.
 
+> Full walkthrough & sample bundle download: **[From AI Art to 3D Parallax Live Wallpapers on Android (Civitai Article)](https://civitai.com/articles/39506/from-ai-art-to-3d-parallax-live-wallpapers-on-android-without-the-stretched-edges-and-halos)**
+
+<p align="center">
+  <img src="docs/demo.gif" alt="Real-device 3D parallax live wallpaper demo" width="270" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/app_ui.png" alt="Parallax Live Android app UI" width="270" />
+</p>
+
 ## Why layered + relief instead of a single depth map?
 
 When you warp a single image with a depth map (MiDaS / Depth Anything), tilting the phone reveals areas behind the subject that don't exist in the image — producing rubbery stretched edges and dark halos around hair and silhouettes.
+
+<p align="center">
+  <img src="docs/layers_breakdown.png" alt="4-panel layer breakdown: composite, foreground cutout, inpainted background, 2-channel 3D relief map" width="100%" />
+</p>
 
 **Parallax Live** splits the scene into two clean planes and applies a smooth, border-zeroed per-vertex relief mesh (`61 × 135`) on top:
 
