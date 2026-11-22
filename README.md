@@ -28,7 +28,7 @@ When you warp a single image with a depth map (MiDaS / Depth Anything), tilting 
 
 ## Highlights
 
-- **Transparent & auditable**: 2 pure-Java files (`~1,680` LOC), zero third-party libraries, zero Gradle wrapper binaries (~184 KB APK).
+- **Transparent & auditable**: 2 pure-Java files (`~1,700` LOC), zero third-party libraries, zero Gradle wrapper binaries (~184 KB APK).
 - **Android 10+** (API 29), compiled against target SDK 35, tested on Android 13 (Redmi Note 10 Pro) and HyperOS 3.
 - **Zero permissions**: doesn't even request `INTERNET`.
 - **Low idle footprint**: caps at ~30 fps only while visible; unregisters sensors and stops rendering immediately when hidden or screen is off.
@@ -41,6 +41,7 @@ When you warp a single image with a depth map (MiDaS / Depth Anything), tilting 
 
 ### Prerequisites
 
+- **Linux or WSL2** (uses Bash 4+ and GNU `realpath`)
 - **Android SDK** (`build-tools` + `platforms/android-35` or newer), with `ANDROID_SDK_ROOT` set (or installed in `~/Android/Sdk`)
 - **JDK 11+** (`javac` + `keytool` in `PATH` or `JAVA_HOME`)
 - **Python 3 + Pillow 9.1+ with WebP support** (`pip install pillow`) — used only to generate the built-in procedural sample scene and pack custom `.wpbundle` files
@@ -122,4 +123,4 @@ A `.wpbundle` is a standard `.zip` containing flat files:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Source code is licensed under MIT — see [LICENSE](LICENSE). Demo screenshots and sample artwork in `docs/` are included for illustration only and are not covered by the MIT license.
