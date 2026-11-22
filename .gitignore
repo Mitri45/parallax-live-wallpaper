@@ -1,0 +1,9 @@
+out/
+build/
+*.apk
+*.idsig
+*.keystore
+*.jks
+*.wpbundle
+__pycache__/
+.DS_Store
